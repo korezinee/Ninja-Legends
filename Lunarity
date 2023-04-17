@@ -171,10 +171,12 @@ end
 local function Hoop()
     spawn(function()
         while task.wait() do
-        if not AutoHoop then break; end
-            for _, v in next, game:GetService("Workspace").Hoops:GetDescendants() do
-                if v.Name == "touchPart" then
-                    v.CFrame = Root.CFrame
+        if Chr and Chr.Parent then
+            if not AutoHoop then break; end
+                for _, v in next, game:GetService("Workspace").Hoops:GetDescendants() do
+                    if v.Name == "touchPart" then
+                        v.CFrame = Chr:WaitForChild("HumanoidRootPart").CFrame
+                    end
                 end
             end
         end
@@ -215,7 +217,7 @@ local Window = Rayfield:CreateWindow({
        GrabKeyFromSite = false, --
        Key = {"Hello"} 
     }
- })
+})
 
 local Tab = Window:CreateTab("⚔️ - Main") 
 local Tab2 = Window:CreateTab("💎 - Crystals") 
@@ -467,7 +469,6 @@ local Slider = Tab5:CreateSlider({
         Player.multiJumpCount.Value = 99999999
     end,
  })
-
 
 function ChestTp()
     gamePath.mythicalChest["circleInner"].CFrame = Root.CFrame
