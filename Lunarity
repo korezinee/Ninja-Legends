@@ -24,7 +24,6 @@ Player.CharacterAdded:Connect(function()
 end)
 local ChrHead = Chr.Head
 local Humanoid = Chr.Humanoid
-local Root = Chr.HumanoidRootPart
 local WeaponTable = {}
 local BeltTable = {}
 local RankTable = {}
@@ -69,6 +68,9 @@ local IslandTable = {
 }
 
 --// Functions \\--
+
+
+local Root = Chr:WaitForChild("HumanoidRootPart")
  
 spawn(function()
     for _, v in next, game:GetService("ReplicatedStorage").Weapons.Ground:GetChildren() do
@@ -185,7 +187,7 @@ end
 
 local function Coin()
     for _, v in next, game:GetService("Workspace").spawnedCoins.Valley:GetChildren() do
-        v.CFrame = Root.CFrame
+        v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
         task.wait()
     end
 end
@@ -368,7 +370,7 @@ local Dropdown = Tab3:CreateDropdown({
 local Button = Tab3:CreateButton({
     Name = "Teleport",
     Callback = function()
-        Root.CFrame = game:GetService("Workspace").islandUnlockParts[AreaToTp].CFrame
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").islandUnlockParts[AreaToTp].CFrame
     end,
  })
 local Section = Tab3:CreateSection("Teleport Section")
@@ -376,7 +378,7 @@ local Section = Tab3:CreateSection("Teleport Section")
 local Button = Tab3:CreateButton({
     Name = "Teleport To Spawn",
     Callback = function()
-        Root.CFrame = CFrame.new(21, 3, 32)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(21, 3, 32)
     end,
  })
 
@@ -385,42 +387,42 @@ local Button = Tab3:CreateButton({
  local Button = Tab3:CreateButton({
     Name = "Teleport To Mystical Waters",
     Callback = function()
-        Root.CFrame = CFrame.new(347.74881, 8824.53809, 114.271019)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(347.74881, 8824.53809, 114.271019)
     end,
  })
 
  local Button = Tab3:CreateButton({
     Name = "Teleport To Sword Of Legends",
     Callback = function()
-        Root.CFrame = CFrame.new(1834.15967, 38.704483, -141.375641)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1834.15967, 38.704483, -141.375641)
     end,
  })
 
  local Button = Tab3:CreateButton({
     Name = "Teleport To Elemental Tornado",
     Callback = function()
-        Root.CFrame = CFrame.new(299.758484, 30383.0957, -90.1542206)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(299.758484, 30383.0957, -90.1542206)
     end,
  })
 
  local Button = Tab3:CreateButton({
     Name = "Teleport To Lava Pit",
     Callback = function()
-        Root.CFrame = CFrame.new(-116.631485, 12952.5381, 271.14624)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-116.631485, 12952.5381, 271.14624)
     end,
  })
 
  local Button = Tab3:CreateButton({
     Name = "Teleport To Tornado",
     Callback = function()
-        Root.CFrame = CFrame.new(-116.631485, 12952.5381, 271.14624)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-116.631485, 12952.5381, 271.14624)
     end,
  })
 
  local Button = Tab3:CreateButton({
     Name = "Teleport To Swords Of Ancients",
     Callback = function()
-        Root.CFrame = CFrame.new(648.365662, 38.704483, 2409.72266)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(648.365662, 38.704483, 2409.72266)
     end,
  })
 
@@ -428,13 +430,13 @@ local Section = Tab4:CreateSection("Shop Section")
 local Button = Tab4:CreateButton({
     Name = "Weapon Shop",
     Callback = function()
-        gamePath.shopAreaCircles["shopAreaCircle11"].circleInner.CFrame = Root.CFrame
+        gamePath.shopAreaCircles["shopAreaCircle11"].circleInner.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
     end,
 })
 local Button = Tab4:CreateButton({
     Name = "Skill Shop",
     Callback = function()
-        gamePath.skillAreaCircles["skillsAreaCircle11"].circleInner.CFrame = Root.CFrame
+        gamePath.skillAreaCircles["skillsAreaCircle11"].circleInner.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
     end,
 })
 
@@ -471,28 +473,28 @@ local Slider = Tab5:CreateSlider({
  })
 
 function ChestTp()
-    gamePath.mythicalChest["circleInner"].CFrame = Root.CFrame
+    gamePath.mythicalChest["circleInner"].CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
     wait(1) 
-    gamePath.goldenChest["circleInner"].CFrame = Root.CFrame
+    gamePath.goldenChest["circleInner"].CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
     wait(1) 
-    gamePath.enchantedChest["circleInner"].CFrame = Root.CFrame
+    gamePath.enchantedChest["circleInner"].CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
     wait(1) 
-    gamePath.magmaChest["circleInner"].CFrame = Root.CFrame
+    gamePath.magmaChest["circleInner"].CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
     wait(1) 
-    gamePath.legendsChest["circleInner"].CFrame = Root.CFrame 
+    gamePath.legendsChest["circleInner"].CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame 
     wait(1)
-    gamePath.eternalChest["circleInner"].CFrame = Root.CFrame
+    gamePath.eternalChest["circleInner"].CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
     wait(1) 
-    gamePath.saharaChest["circleInner"].CFrame = Root.CFrame
+    gamePath.saharaChest["circleInner"].CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
     wait(1) 
-    gamePath.thunderChest["circleInner"].CFrame = Root.CFrame
+    gamePath.thunderChest["circleInner"].CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
     wait(1) 
-    gamePath.ancientChest["circleInner"].CFrame = Root.CFrame
+    gamePath.ancientChest["circleInner"].CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
     wait(1) 
-    gamePath.midnightShadowChest["circleInner"].CFrame = Root.CFrame
+    gamePath.midnightShadowChest["circleInner"].CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
     wait(1) 
-    gamePath["wonderChest"].circleInner.CFrame = Root.CFrame
+    gamePath["wonderChest"].circleInner.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
     wait(1) 
-    gamePath.ultraNinjitsuChest["circleInner"].CFrame = Root.CFrame 
+    gamePath.ultraNinjitsuChest["circleInner"].CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame 
 end
 end
