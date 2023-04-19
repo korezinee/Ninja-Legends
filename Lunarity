@@ -67,10 +67,22 @@ local IslandTable = {
     "Blazing Vortex Island"
 }
 
+local ChestTables = {
+    "mythicalChest",
+    "goldenChest",
+    "enchantedChest",
+    "magmaChest",
+    "legendsChest",
+    "eternalChest",
+    "saharaChest",
+    "thunderChest",
+    "ancientChest",
+    "midnightShadowChest",
+    "wonderChest",
+    "ultraNinjitsuChest"
+}
+
 --// Functions \\--
-
-
-local Root = Chr:WaitForChild("HumanoidRootPart")
  
 spawn(function()
     for _, v in next, game:GetService("ReplicatedStorage").Weapons.Ground:GetChildren() do
@@ -189,6 +201,13 @@ local function Coin()
     for _, v in next, game:GetService("Workspace").spawnedCoins.Valley:GetChildren() do
         v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
         task.wait()
+    end
+end
+
+function ChestTp()
+    for _, v in next, ChestTables do
+        gamePath[v]["circleInner"].CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+        wait(0.1)
     end
 end
 
@@ -472,29 +491,3 @@ local Slider = Tab5:CreateSlider({
     end,
  })
 
-function ChestTp()
-    gamePath.mythicalChest["circleInner"].CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-    wait(1) 
-    gamePath.goldenChest["circleInner"].CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-    wait(1) 
-    gamePath.enchantedChest["circleInner"].CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-    wait(1) 
-    gamePath.magmaChest["circleInner"].CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-    wait(1) 
-    gamePath.legendsChest["circleInner"].CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame 
-    wait(1)
-    gamePath.eternalChest["circleInner"].CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-    wait(1) 
-    gamePath.saharaChest["circleInner"].CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-    wait(1) 
-    gamePath.thunderChest["circleInner"].CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-    wait(1) 
-    gamePath.ancientChest["circleInner"].CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-    wait(1) 
-    gamePath.midnightShadowChest["circleInner"].CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-    wait(1) 
-    gamePath["wonderChest"].circleInner.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-    wait(1) 
-    gamePath.ultraNinjitsuChest["circleInner"].CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame 
-end
-end
